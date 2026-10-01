@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хава Садулаева — косметолог-эстетист</title>
+<meta name="description" content="Косметолог Хава Садулаева: чистки, пилинги, аппаратные процедуры, депиляция воском. ТД «ГУМС», ул. Ватутина, 96.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%20role='img'%20aria-label='Хава%20Садулаева'%3E%20%20%3Cdefs%3E%20%20%20%3ClinearGradient%20id='g'%20x1='0.08'%20y1='0'%20x2='0.92'%20y2='1'%3E%20%20%20%20%3Cstop%20offset='0'%20stop-color='%23C98B7E'/%3E%20%20%20%20%3Cstop%20offset='1'%20stop-color='%238A5245'/%3E%20%20%20%3C/linearGradient%3E%20%20%3C/defs%3E%20%20%3Ccircle%20cx='32'%20cy='32'%20r='32'%20fill='url(%23g)'/%3E%20%20%3Cpath%20d='M21%2021%20L43%2043%20M43%2021%20L21%2043'%20%20%20%20%20stroke='%23FBF7F4'%20stroke-width='6.5'%20%20%20%20%20stroke-linecap='round'%20fill='none'/%3E%20%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Анна Соколова — косметолог-эстетист
+   Общие стили для всех страниц
+   ============================================================ */
+
+:root{
+  --cream:#FBF7F4;
+  --nude:#F2E4DC;
+  --nude-deep:#E8D3C8;
+  --rose:#B87A6D;
+  --rose-dark:#9C6055;
+  --deep:#3B2C28;
+  --muted:#7C6A64;
+  --line:rgba(59,44,40,.12);
+  --white:#FFFFFF;
+  --green:#6FA96B;
+  --green-dark:#4A7A46;
+  --radius:18px;
+  --shadow:0 18px 40px -22px rgba(59,44,40,.35);
+  --maxw:1140px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--deep);
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.15;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* якоря не заезжают под липкую шапку */
+[id]{scroll-margin-top:104px}
+
+/* ---------- ШАПКА ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,247,244,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s ease,background .3s ease;
+}
+.header.scrolled{box-shadow:0 8px 30px -20px rgba(59,44,40,.5);background:rgba(251,247,244,.95)}
+
+.header__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;height:82px;
+}
+
+.logo{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.logo__mark{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(140deg,var(--nude) 0%,var(--rose) 100%);
+  display:grid;place-items:center;
+  font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--white);
+  letter-spacing:.5px;
+}
+.logo__text{display:flex;flex-direction:column;line-height:1.2}
+.logo__name{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:.3px}
+.logo__role{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+.nav{display:flex;align-items:center;gap:30px}
+.nav__link{
+  font-size:14.5px;color:var(--muted);position:relative;
+  padding:6px 0;transition:color .22s ease;
+}
+.nav__link::after{
+  content:'';position:absolute;left:0;bottom:0;height:1px;width:0;
+  background:var(--rose);transition:width .28s ease;
+}
+.nav__link:hover{color:var(--deep)}
+.nav__link:hover::after{width:100%}
+.nav__link.active{color:var(--deep)}
+.nav__link.active::after{width:100%}
+
+.header__cta{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--deep);color:var(--cream);
+  padding:13px 24px;border-radius:100px;
+  font-size:14px;letter-spacing:.02em;border:none;cursor:pointer;
+  transition:background .25s ease,transform .25s ease;
+  white-space:nowrap;
+}
+.header__cta:hover{background:var(--rose-dark);transform:translateY(-1px)}
+.header__cta svg{width:15px;height:15px}
+
+.burger{
+  display:none;width:44px;height:44px;border:1px solid var(--line);
+  border-radius:12px;background:transparent;cursor:pointer;
+  flex-direction:column;justify-content:center;align-items:center;gap:5px;
+}
+.burger span{display:block;width:19px;height:1.6px;background:var(--deep);transition:transform .3s ease,opacity .3s ease}
+.burger.open span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+
+.mobile-menu{
+  display:none;flex-direction:column;gap:2px;
+  border-top:1px solid var(--line);padding:10px 0 22px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  padding:14px 4px;font-size:16px;color:var(--deep);
+  border-bottom:1px solid var(--line);
+}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a.active{color:var(--rose-dark)}
+.mobile-menu .header__cta{margin-top:16px;justify-content:center}
+
+/* ---------- ЗАГОЛОВОК СТРАНИЦЫ ---------- */
+.page-head{
+  padding:56px 0 60px;
+  background:linear-gradient(180deg,var(--nude) 0%,var(--cream) 100%);
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.page-head::before{
+  content:'';position:absolute;top:-160px;right:-120px;
+  width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 68%);
+  pointer-events:none;
+}
+.page-head__inner{position:relative;max-width:720px}
+.page-head h1{font-size:clamp(34px,5vw,54px);letter-spacing:-.4px}
+.page-head p{color:var(--muted);margin-top:18px;font-size:16.5px;max-width:600px}
+
+.breadcrumbs{
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);margin-bottom:24px;
+}
+.breadcrumbs a:hover{color:var(--rose-dark)}
+.breadcrumbs .sep{opacity:.45}
+.breadcrumbs .current{color:var(--deep)}
+
+/* ---------- ОБЩЕЕ ---------- */
+.section{padding:96px 0}
+.section--tint{background:var(--white)}
+.section--tight{padding:70px 0}
+.eyebrow{
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:16px;
+}
+.section__head{max-width:620px;margin-bottom:56px}
+.section__head h2{font-size:clamp(32px,4.2vw,46px)}
+.section__head p{color:var(--muted);margin-top:16px;font-size:16px}
+.section__head--center{margin-left:auto;margin-right:auto;text-align:center}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 30px;border-radius:100px;font-size:15px;
+  cursor:pointer;border:1px solid transparent;
+  transition:all .25s ease;
+}
+.btn--primary{background:var(--deep);color:var(--cream)}
+.btn--primary:hover{background:var(--rose-dark);transform:translateY(-2px)}
+.btn--ghost{border-color:var(--line);color:var(--deep);background:transparent}
+.btn--ghost:hover{border-color:var(--rose);color:var(--rose-dark)}
+.btn svg{width:17px;height:17px;flex-shrink:0}
+.btn--light{background:var(--cream);color:var(--deep)}
+.btn--light:hover{background:var(--white);transform:translateY(-2px)}
+.btn--sm{padding:11px 22px;font-size:14px}
+
+.link-more{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14.5px;color:var(--rose-dark);
+  border-bottom:1px solid rgba(156,96,85,.35);
+  padding-bottom:2px;transition:gap .25s ease,border-color .25s ease;
+}
+.link-more:hover{gap:13px;border-color:var(--rose-dark)}
+
+/* ---------- ГЕРОЙ ---------- */
+.hero{padding:90px 0 100px;position:relative;overflow:hidden}
+
+/* размытое фото на фоне */
+.hero__bg{
+  position:absolute;inset:-48px;z-index:0;pointer-events:none;
+  background:url('data:image/jpeg;base64,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') center / cover no-repeat;
+  filter:blur(24px) saturate(1.08);
+  opacity:.55;
+}
+.hero__overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,
+    var(--cream) 0%,
+    rgba(251,247,244,.88) 45%,
+    rgba(251,247,244,.5) 100%);
+}
+.hero > .wrap{position:relative;z-index:2}
+
+.hero::before{
+  content:'';position:absolute;top:-180px;right:-140px;z-index:1;
+  width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,var(--nude) 0%,rgba(242,228,220,0) 68%);
+  pointer-events:none;
+}
+.hero__grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:70px;align-items:center;position:relative;
+}
+.hero h1{font-size:clamp(40px,5.6vw,66px);letter-spacing:-.5px}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero__lead{color:var(--muted);font-size:17.5px;margin-top:24px;max-width:490px}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+
+.hero__stats{
+  display:flex;gap:44px;margin-top:52px;padding-top:32px;
+  border-top:1px solid var(--line);flex-wrap:wrap;
+}
+.stat__num{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--rose-dark);line-height:1}
+.stat__label{font-size:13px;color:var(--muted);margin-top:8px}
+
+.hero__visual{position:relative}
+.hero__card{
+  aspect-ratio:4/5;border-radius:200px 200px 24px 24px;
+  background:linear-gradient(165deg,var(--nude) 0%,var(--nude-deep) 55%,var(--rose) 130%);
+  box-shadow:var(--shadow);
+  display:grid;place-items:center;text-align:center;padding:40px;
+}
+.hero__card-inner{color:var(--white)}
+.hero__card-inner .mark{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:1;opacity:.9}
+.hero__card-inner p{font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin-top:18px;opacity:.95}
+.hero__badge{
+  position:absolute;bottom:26px;left:-30px;
+  background:var(--white);border-radius:16px;padding:18px 22px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;
+}
+.hero__badge .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--green);flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(111,169,107,.18);
+}
+.hero__badge b{display:block;font-size:14px;font-weight:600}
+.hero__badge span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- КАРТОЧКИ ---------- */
+.cards{display:grid;gap:24px}
+.cards--3{grid-template-columns:repeat(3,1fr)}
+.cards--2{grid-template-columns:repeat(2,1fr)}
+
+.card{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 30px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.card h3{font-size:24px;margin:16px 0 12px}
+.card p{color:var(--muted);font-size:15px}
+.card a{color:var(--rose-dark);transition:color .2s ease}
+.card a:hover{color:var(--deep);text-decoration:underline}
+.card__num{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--rose);letter-spacing:.08em}
+.card__foot{
+  margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  font-size:14px;color:var(--rose-dark);font-weight:500;
+}
+.card__icon{
+  width:48px;height:48px;border-radius:14px;background:var(--nude);
+  display:grid;place-items:center;color:var(--rose-dark);margin-bottom:20px;
+}
+.card__icon svg{width:22px;height:22px}
+
+/* ---------- ДЕТАЛИ УСЛУГ ---------- */
+.service-detail{
+  display:grid;grid-template-columns:1.35fr .65fr;
+  gap:48px;padding:52px 0;border-bottom:1px solid var(--line);
+}
+.service-detail:last-child{border-bottom:none}
+.service-detail:first-child{padding-top:0}
+.service-detail h3{font-size:30px;margin-bottom:16px}
+.service-detail p{color:var(--muted);font-size:15.5px;margin-bottom:18px;max-width:620px}
+.service-detail h4{
+  font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--rose-dark);
+  margin:26px 0 14px;
+}
+.tick-list{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.tick-list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--deep)}
+.tick-list svg{width:16px;height:16px;flex-shrink:0;margin-top:5px;color:var(--rose)}
+
+.side-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;box-shadow:var(--shadow);align-self:start;position:sticky;top:106px;
+}
+.side-card__label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.side-card__price{
+  font-family:'Cormorant Garamond',serif;font-size:38px;
+  color:var(--rose-dark);line-height:1.1;margin:10px 0 22px;
+}
+.side-card__price--free{color:var(--green-dark);font-size:32px;font-weight:600}
+.side-card dl{margin:0 0 24px;display:grid;gap:14px}
+.side-card dt{font-size:12.5px;color:var(--muted);margin-bottom:3px}
+.side-card dd{margin:0;font-size:15px}
+.side-card .btn{width:100%}
+
+/* компактный список зон с ценами (внутри блока услуги) */
+.mini-price{
+  list-style:none;padding:0;margin:0;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 36px;
+  border-top:1px solid var(--line);
+}
+.mini-price li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;
+}
+.mini-price b{color:var(--rose-dark);font-weight:500;white-space:nowrap}
+.mini-price li.is-total{grid-column:1 / -1;font-weight:600}
+.mini-price li.is-total b{font-size:17px}
+
+/* ---------- ОБО МНЕ ---------- */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.about__photo{
+  aspect-ratio:3/4;border-radius:24px;
+  background:linear-gradient(200deg,var(--nude) 0%,var(--rose) 120%);
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.about__photo::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.45) 0%,transparent 55%);
+}
+.about h2{font-size:clamp(32px,4.2vw,46px);margin-bottom:22px}
+.about p{color:var(--muted);margin-bottom:18px;font-size:16px}
+.about__list{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
+.about__list li{display:flex;gap:13px;align-items:flex-start;font-size:15.5px}
+.about__list svg{width:18px;height:18px;flex-shrink:0;margin-top:4px;color:var(--rose)}
+
+/* ---------- ТАЙМЛАЙН ---------- */
+.timeline{position:relative;padding-left:34px;max-width:760px}
+.timeline::before{
+  content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line);
+}
+.timeline__item{position:relative;padding-bottom:38px}
+.timeline__item:last-child{padding-bottom:0}
+.timeline__item::before{
+  content:'';position:absolute;left:-34px;top:9px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--cream);border:2px solid var(--rose);
+}
+.timeline__year{
+  font-family:'Cormorant Garamond',serif;font-size:15px;
+  color:var(--rose);letter-spacing:.06em;
+}
+.timeline__item h3{font-size:22px;margin:6px 0 8px}
+.timeline__item p{color:var(--muted);font-size:15px}
+
+/* ---------- ЦЕНЫ ---------- */
+.price-list{
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;max-width:860px;margin:0 auto;
+}
+.price-row{
+  display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  padding:22px 32px;border-bottom:1px solid var(--line);
+  transition:background .2s ease;
+}
+.price-row:last-child{border-bottom:none}
+.price-row:hover{background:var(--white)}
+.price-row__name{font-size:16.5px}
+.price-row__note{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.price-row__val{
+  font-family:'Cormorant Garamond',serif;font-size:22px;
+  color:var(--rose-dark);white-space:nowrap;
+}
+.price-row__val--free{color:var(--green-dark);font-weight:600}
+
+/* ---------- ОТЗЫВЫ ---------- */
+.review{
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:var(--radius);padding:34px 30px;
+  display:flex;flex-direction:column;
+}
+.review__stars{color:var(--rose);letter-spacing:3px;font-size:14px}
+.review p{margin:18px 0 22px;font-size:15.5px;color:var(--deep);flex:1}
+.review__author{display:flex;align-items:center;gap:12px}
+.review__avatar{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(140deg,var(--nude-deep),var(--rose));
+  display:grid;place-items:center;color:var(--white);
+  font-family:'Cormorant Garamond',serif;font-size:16px;
+}
+.review__author b{font-size:14.5px;font-weight:600;display:block}
+.review__author span{font-size:12.5px;color:var(--muted)}
+
+.rating{
+  display:flex;align-items:center;gap:30px;flex-wrap:wrap;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 38px;margin-bottom:48px;
+}
+.rating__score{
+  font-family:'Cormorant Garamond',serif;font-size:52px;
+  color:var(--rose-dark);line-height:1;
+}
+.rating__meta b{display:block;font-size:15.5px;font-weight:600}
+.rating__meta span{font-size:13.5px;color:var(--muted)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto}
+.faq details{
+  border-bottom:1px solid var(--line);padding:20px 0;
+}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;list-style:none;font-size:17px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'+';font-size:22px;color:var(--rose);font-weight:300;
+  transition:transform .25s ease;flex-shrink:0;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);font-size:15.5px;margin-top:14px;max-width:680px}
+
+/* ---------- КОНТАКТЫ ---------- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact h2{font-size:clamp(32px,4.2vw,46px);margin-bottom:22px}
+.contact p{color:var(--muted);font-size:16px}
+.contact__items{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:20px}
+.contact__items li{display:flex;gap:15px;align-items:flex-start}
+.contact__items .ico{
+  width:42px;height:42px;border-radius:12px;background:var(--nude);
+  display:grid;place-items:center;flex-shrink:0;color:var(--rose-dark);
+}
+.contact__items .ico svg{width:18px;height:18px}
+.contact__items b{display:block;font-size:15.5px;font-weight:600}
+.contact__items small{color:var(--muted);font-size:13.5px}
+.contact__items a{transition:color .2s ease}
+.contact__items a:hover{color:var(--rose-dark)}
+.contact__items a:hover{text-decoration:underline}
+
+.form{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius);padding:38px 34px;box-shadow:var(--shadow);
+}
+.form h3{font-size:26px;margin-bottom:8px}
+.form > p{font-size:14px;color:var(--muted);margin-bottom:26px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.field input,.field select,.field textarea{
+  width:100%;padding:14px 16px;font:inherit;font-size:15px;
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:12px;color:var(--deep);outline:none;
+  transition:border-color .2s ease,background .2s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--rose);background:var(--white);
+}
+.field textarea{resize:vertical;min-height:92px}
+.form .btn{width:100%;margin-top:8px}
+.form__note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px}
+.form__ok{
+  display:none;margin-top:16px;padding:14px 18px;border-radius:12px;
+  background:#EFF6EE;color:#3F6B3B;font-size:14px;text-align:center;
+}
+.form__ok.show{display:block}
+
+.map{
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:16/9;background:
+    linear-gradient(135deg,var(--nude) 0%,var(--cream) 60%,var(--nude-deep) 100%);
+  display:grid;place-items:center;text-align:center;padding:30px;
+  position:relative;
+}
+.map__pin{
+  width:56px;height:56px;border-radius:50%;background:var(--white);
+  display:grid;place-items:center;box-shadow:var(--shadow);margin:0 auto 16px;
+  color:var(--rose-dark);
+}
+.map__pin svg{width:24px;height:24px}
+.map b{display:block;font-size:16px;font-weight:600}
+.map span{font-size:14px;color:var(--muted)}
+
+/* ---------- CTA-БАННЕР ---------- */
+.cta-band{
+  background:var(--deep);color:var(--cream);border-radius:24px;
+  padding:56px 48px;display:flex;justify-content:space-between;
+  align-items:center;gap:36px;flex-wrap:wrap;
+}
+.cta-band h2{font-size:clamp(28px,3.6vw,40px);color:var(--cream)}
+.cta-band p{color:rgba(251,247,244,.7);margin-top:12px;font-size:15.5px;max-width:520px}
+.cta-band .btn--primary{background:var(--rose)}
+.cta-band .btn--primary:hover{background:var(--cream);color:var(--deep)}
+
+/* ---------- ПОДВАЛ ---------- */
+.footer{background:var(--deep);color:rgba(251,247,244,.72);padding:60px 0 34px}
+.footer__top{
+  display:flex;justify-content:space-between;gap:40px;
+  flex-wrap:wrap;padding-bottom:38px;border-bottom:1px solid rgba(251,247,244,.14);
+}
+.footer .logo__name{color:var(--cream)}
+.footer .logo__role{color:rgba(251,247,244,.55)}
+.footer__links{display:flex;gap:30px;flex-wrap:wrap}
+.footer__links a{font-size:14.5px;transition:color .2s ease}
+.footer__links a:hover{color:var(--cream)}
+.footer__bottom{
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding-top:26px;font-size:13px;color:rgba(251,247,244,.5);
+}
+.footer__bottom a{transition:color .2s ease}
+.footer__bottom a:hover{color:var(--cream)}
+.footer__phone{color:rgba(251,247,244,.85);font-size:14px;white-space:nowrap}
+
+/* ---------- ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width:980px){
+  /* скрываем только кнопку в верхней панели — кнопка в мобильном меню остаётся */
+  .nav,.header__inner .header__cta{display:none}
+  .burger{display:flex}
+  /* на узком экране текст занимает всю ширину — затемняем фон равномерно */
+  .hero__overlay{
+    background:linear-gradient(180deg,rgba(251,247,244,.92) 0%,rgba(251,247,244,.82) 100%);
+  }
+  .hero__grid,.about,.contact,.service-detail{grid-template-columns:1fr;gap:40px}
+  .hero__visual{max-width:400px;margin:0 auto;width:100%}
+  .hero__badge{left:0}
+  .cards--3,.cards--2{grid-template-columns:repeat(2,1fr)}
+  .side-card{position:static}
+  .section{padding:76px 0}
+}
+@media (max-width:640px){
+  .header__inner{height:70px}
+  .mini-price{grid-template-columns:1fr;gap:0}
+  .hero{padding:56px 0 68px}
+  .hero__stats{gap:28px}
+  .cards--3,.cards--2{grid-template-columns:1fr}
+  .price-row{padding:18px 22px;flex-direction:column;gap:6px;align-items:flex-start}
+  .form{padding:30px 24px}
+  .footer__top{flex-direction:column;gap:26px}
+  .cta-band{padding:40px 28px}
+  .page-head{padding:40px 0 44px}
+  .rating{padding:26px 24px;gap:20px}
+}
+
+
+/* ---------- переключение страниц в одном файле ---------- */
+.page{display:none}
+.page.active{display:block}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <div class="header__inner">
+      <a href="#home" class="logo" data-nav>
+        <span class="logo__mark">Х</span>
+        <span class="logo__text">
+          <span class="logo__name">Хава Садулаева</span>
+          <span class="logo__role">Косметолог-эстетист</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#services" class="nav__link" data-nav>Услуги</a>
+        <a href="#about" class="nav__link" data-nav>Обо мне</a>
+        <a href="#prices" class="nav__link" data-nav>Цены</a>
+        <a href="#reviews" class="nav__link" data-nav>Отзывы</a>
+        <a href="#contacts" class="nav__link" data-nav>Контакты</a>
+      </nav>
+
+      <a href="#contacts" class="header__cta" data-nav>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/>
+        </svg>
+        Записаться
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" data-nav>Услуги</a>
+      <a href="#about" data-nav>Обо мне</a>
+      <a href="#prices" data-nav>Цены</a>
+      <a href="#reviews" data-nav>Отзывы</a>
+      <a href="#contacts" data-nav>Контакты</a>
+      <a href="#contacts" class="header__cta" data-nav>Записаться</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ===== HOME ===== -->
+<section class="page active" id="home">
+<!-- ================= ГЕРОЙ ================= -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow">Косметология · Уход · Здоровье кожи</p>
+        <h1>Кожа, которая<br>дышит <em>уверенностью</em></h1>
+        <p class="hero__lead">
+          Индивидуальные программы ухода, чистки и аппаратные процедуры.
+          Без навязывания лишнего — только то, что действительно нужно вашей коже.
+        </p>
+        <div class="hero__actions">
+          <a href="#contacts" class="btn btn--primary">Записаться на консультацию</a>
+          <a href="#services" class="btn btn--ghost">Смотреть услуги</a>
+        </div>
+
+        <div class="hero__stats">
+          <div>
+            <div class="stat__num">8</div>
+            <div class="stat__label">лет практики</div>
+          </div>
+          <div>
+            <div class="stat__num">1200+</div>
+            <div class="stat__label">довольных клиентов</div>
+          </div>
+          <div>
+            <div class="stat__num">4.9</div>
+            <div class="stat__label">средняя оценка</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__card">
+          <div class="hero__card-inner">
+            <div class="mark">&#10047;</div>
+            <p>Медицинское<br>образование</p>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <span class="dot"></span>
+          <span>
+            <b>Есть свободные окна</b>
+            <span>на этой неделе</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРЕИМУЩЕСТВА ================= -->
+<section class="section section--tint section--tight">
+  <div class="wrap">
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Безопасность</h3>
+        <p>Медицинское образование, одноразовые материалы и стерилизация инструментов на каждом приёме.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <h3>Без спешки</h3>
+        <p>Одна процедура — от 50 до 90 минут. Никаких «конвейеров» и трёх клиентов в один слот.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Честно</h3>
+        <p>Скажу, если процедура вам не нужна. Не назначаю лишнего и не продаю курсы «на всякий случай».</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= УСЛУГИ (ПРЕВЬЮ) ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Услуги</p>
+      <h2>Популярные процедуры</h2>
+      <p>Полный список с описанием и подготовкой — на странице услуг.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__num">01</div>
+        <h3>Механическая чистка</h3>
+        <p>Классическая ручная чистка с распариванием. Прорабатывает поры, убирает загрязнения и чёрные точки.</p>
+        <div class="card__foot">
+          <span>3 500 ₽</span>
+          <a href="#mech" class="link-more">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">02</div>
+        <h3>Пилинг Джесснера</h3>
+        <p>Комбинированный пилинг. Один из самых рабочих вариантов при постакне и неровной текстуре кожи.</p>
+        <div class="card__foot">
+          <span>3 000 ₽</span>
+          <a href="#jessner" class="link-more">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">03</div>
+        <h3>Процедура «Сияние»</h3>
+        <p>Экспресс-уход на выход: очищение, маска и финальный уход за один визит. Без реабилитации.</p>
+        <div class="card__foot">
+          <span>3 000 ₽</span>
+          <a href="#glow" class="link-more">Подробнее →</a>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a href="#services" class="btn btn--ghost">Все услуги и цены</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОБО МНЕ (КРАТКО) ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="about">
+      <div class="about__photo reveal"></div>
+
+      <div class="reveal">
+        <p class="eyebrow">Обо мне</p>
+        <h2>Хава Садулаева</h2>
+        <p>
+          Косметолог-эстетист с медицинским образованием. Работаю с кожей любого типа —
+          от подростковых высыпаний до возрастных изменений.
+        </p>
+        <p>
+          Моя задача — не продать как можно больше процедур, а честно сказать, что нужно
+          именно вашей коже и когда результата можно будет ждать.
+        </p>
+        <a href="#about" class="link-more" style="margin-top:6px">Подробнее обо мне →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ (КРАТКО) ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Отзывы</p>
+      <h2>Что говорят клиенты</h2>
+    </div>
+
+    <div class="cards cards--2">
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Ходила на чистку впервые за много лет. Хава всё объяснила, было совсем не больно, а кожа после — как в рекламе. Через месяц вернулась на курс.</p>
+        <div class="review__author">
+          <span class="review__avatar">М</span>
+          <span><b>Мария</b><span>механическая чистка</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Наконец-то нашла специалиста, который не выписывает десять баночек «обязательно купить». Сказала, что реально нужно — кожа стала заметно спокойнее.</p>
+        <div class="review__author">
+          <span class="review__avatar">Е</span>
+          <span><b>Екатерина</b><span>консультация</span></span>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a href="#reviews" class="link-more">Читать все отзывы →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Не знаете, с чего начать?</h2>
+        <p>Первая консультация бесплатная: разберём состояние кожи, текущий уход и составим план процедур.</p>
+      </div>
+      <a href="#contacts" class="btn btn--primary">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="page" id="services">
+<!-- ================= ЗАГОЛОВОК СТРАНИЦЫ ================= -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="page-head__inner">
+      <nav class="breadcrumbs">
+        <a href="#home">Главная</a>
+        <span class="sep">/</span>
+        <span class="current">Услуги</span>
+      </nav>
+      <h1>Услуги</h1>
+      <p>Каждая процедура начинается с диагностики кожи. Ниже — что делает процедура и кому она подходит.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= СПИСОК УСЛУГ ================= -->
+<section class="section">
+  <div class="wrap">
+
+    <!-- КОНСУЛЬТАЦИЯ -->
+    <div class="service-detail" id="consult">
+      <div class="reveal">
+        <p class="eyebrow">С чего начать</p>
+        <h3>Консультация</h3>
+        <p>
+          Если не знаете, какая процедура нужна — начните отсюда. Разберём состояние
+          кожи, текущий домашний уход и составим понятный план на ближайшие месяцы.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> всем, кто приходит впервые, и тем, кто хочет
+          поменять схему ухода.
+        </p>
+        <p>
+          Консультация бесплатная — это часть работы, а не отдельная услуга.
+          Мне важно понять вашу кожу до того, как что-то предлагать.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price side-card__price--free">Бесплатно</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- МЕХАНИЧЕСКАЯ ЧИСТКА -->
+    <div class="service-detail" id="mech">
+      <div class="reveal">
+        <p class="eyebrow">01 · Чистки</p>
+        <h3>Механическая чистка</h3>
+        <p>
+          Классическая ручная чистка. Кожа распаривается и размягчается, после чего
+          поры прорабатываются вручную, а завершается всё успокаивающей маской
+          и финальным уходом.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> жирной и комбинированной коже, при забитых
+          порах и чёрных точках.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">3 500 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- УЛЬТРАЗВУКОВАЯ ЧИСТКА -->
+    <div class="service-detail" id="ultra">
+      <div class="reveal">
+        <p class="eyebrow">02 · Чистки</p>
+        <h3>Ультразвуковая чистка</h3>
+        <p>
+          Очищение кожи ультразвуком — без ручного выдавливания и давления на кожу.
+          Мягкий вариант для тех, кому механическая чистка не подходит
+          или тяжело переносится.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> чувствительной, тонкой и склонной
+          к раздражению коже.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">2 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- КАПИЛЛЯРОТЕРАПИЯ -->
+    <div class="service-detail" id="capillary">
+      <div class="reveal">
+        <p class="eyebrow">03 · Сосуды</p>
+        <h3>Капилляротерапия</h3>
+        <p>
+          Процедура, направленная на сосуды и микроциркуляцию: укрепляет сосудистую
+          стенку и улучшает питание кожи. Курс даёт более стойкий результат,
+          чем разовая процедура.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при сосудистой сеточке, куперозе, тусклом
+          цвете лица и склонности к отёкам.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">4 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ФРАКЦИОННАЯ ТЕРАПИЯ -->
+    <div class="service-detail" id="fractional">
+      <div class="reveal">
+        <p class="eyebrow">04 · Обновление</p>
+        <h3>Фракционная терапия</h3>
+        <p>
+          Фракционное воздействие на кожу: обновляет верхний слой и запускает
+          выработку собственного коллагена. Работает с текстурой и рельефом,
+          результат нарастает в течение курса.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при неровной текстуре, постакне,
+          расширенных порах и первых морщинах.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">2 500 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ФРАКЦИОННАЯ МЕЗОТЕРАПИЯ -->
+    <div class="service-detail" id="meso">
+      <div class="reveal">
+        <p class="eyebrow">05 · Обновление</p>
+        <h3>Фракционная мезотерапия</h3>
+        <p>
+          Введение уходовых коктейлей фракционным методом — питательные вещества
+          доставляются в кожу через микроканалы. Увлажняет, возвращает плотность
+          и тонус.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> сухой, обезвоженной коже и коже,
+          потерявшей тонус.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">4 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- СИЯНИЕ -->
+    <div class="service-detail" id="glow">
+      <div class="reveal">
+        <p class="eyebrow">06 · Экспресс-уход</p>
+        <h3>Процедура «Сияние»</h3>
+        <p>
+          Быстрый уход на выход: очищение, маска и финальный уход за один визит.
+          Заметный результат сразу, без реабилитации — можно планировать прямо
+          перед событием.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> перед свиданием, съёмкой, праздником —
+          когда нужен свежий вид сегодня.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">3 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- РОЗОВЫЙ ПИЛИНГ -->
+    <div class="service-detail" id="pink">
+      <div class="reveal">
+        <p class="eyebrow">07 · Пилинги</p>
+        <h3>Розовый пилинг</h3>
+        <p>
+          Мягкий поверхностный пилинг. Осветляет и выравнивает тон,
+          освежает цвет лица. Хороший вариант для первого знакомства с кислотами.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> тусклой коже с неровным тоном,
+          в том числе чувствительной.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">3 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ФАРФОРОВАЯ КУКЛА -->
+    <div class="service-detail" id="porcelain">
+      <div class="reveal">
+        <p class="eyebrow">08 · Уход</p>
+        <h3>Фарфоровая кукла</h3>
+        <p>
+          Моделирующая процедура с плотной маской. Сужает поры, выравнивает рельеф
+          и даёт эффект «фарфоровой» кожи — ровной и матовой.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при расширенных порах и коже,
+          потерявшей тонус.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">2 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ПИЛИНГ ДЖЕССНЕРА -->
+    <div class="service-detail" id="jessner">
+      <div class="reveal">
+        <p class="eyebrow">09 · Пилинги</p>
+        <h3>Пилинг Джесснера</h3>
+        <p>
+          Классический комбинированный пилинг — один из самых рабочих вариантов
+          при постакне и неровной текстуре. Заметно обновляет кожу,
+          требует восстановления.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при постакне, жирной коже, неровной
+          текстуре и пигментации.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">3 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ЖИДКИЙ ЛАЗЕР -->
+    <div class="service-detail" id="laser">
+      <div class="reveal">
+        <p class="eyebrow">10 · Аппаратные</p>
+        <h3>Жидкий лазер</h3>
+        <p>
+          Аппаратная процедура обновления кожи. Работает с тоном и упругостью,
+          освежает лицо. Курс даёт накопительный результат.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при неровном тоне и снижении упругости кожи.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">5 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- БИОРЕПИЛ -->
+    <div class="service-detail" id="biorepeel">
+      <div class="reveal">
+        <p class="eyebrow">11 · Пилинги</p>
+        <h3>Пилинг «Биорепил»</h3>
+        <p>
+          Пилинг без выраженного шелушения. Обновляет кожу и выравнивает тон,
+          но не выбивает из привычного ритма — после процедуры можно сразу
+          вернуться к делам.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> тем, кто не может позволить себе
+          шелушение — из-за работы, съёмок или событий.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">4 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- PRX -->
+    <div class="service-detail" id="prx">
+      <div class="reveal">
+        <p class="eyebrow">12 · Пилинги</p>
+        <h3>Пилинг PRX</h3>
+        <p>
+          Освежающий пилинг без шелушения и реабилитации. Работает с тургором
+          и тоном: кожа выглядит отдохнувшей уже после первой процедуры.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> при тусклой коже, когда нужен быстрый
+          эффект свежести без восстановления.
+        </p>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">4 000 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+    <!-- ВОСК -->
+    <div class="service-detail" id="wax">
+      <div class="reveal">
+        <p class="eyebrow">13 · Депиляция</p>
+        <h3>Депиляция воском</h3>
+        <p>
+          Удаление волос воском по зонам. Метод и вид воска подбираю под зону
+          и чувствительность кожи. Итоговая сумма зависит от количества зон
+          за один визит.
+        </p>
+        <p>
+          <strong>Кому подходит:</strong> всем, у кого нет противопоказаний —
+          общий список ниже на странице.
+        </p>
+
+        <h4>Зоны и цены</h4>
+        <ul class="mini-price">
+          <li><span>Руки полностью</span><b>2 000 ₽</b></li>
+          <li><span>Руки до локтя</span><b>1 500 ₽</b></li>
+          <li><span>Ноги полностью</span><b>2 000 ₽</b></li>
+          <li><span>Ноги до колен</span><b>1 500 ₽</b></li>
+          <li><span>Бикини</span><b>1 500 ₽</b></li>
+          <li><span>Глубокое бикини</span><b>2 000 ₽</b></li>
+          <li><span>Подмышки</span><b>1 500 ₽</b></li>
+          <li><span>Лицо полностью</span><b>1 000 ₽</b></li>
+          <li><span>Живот</span><b>1 500 ₽</b></li>
+          <li><span>Спина</span><b>1 500 ₽</b></li>
+          <li><span>Бакенбарды</span><b>500 ₽</b></li>
+          <li><span>Усики</span><b>500 ₽</b></li>
+          <li class="is-total"><span>Всё тело без ограничения</span><b>5 000 ₽</b></li>
+        </ul>
+      </div>
+
+      <aside class="side-card reveal">
+        <div class="side-card__label">Стоимость</div>
+        <div class="side-card__price">от 500 ₽</div>
+        <a href="#contacts" class="btn btn--primary btn--sm">Записаться</a>
+      </aside>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ПОДГОТОВКА ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Перед визитом</p>
+      <h2>Как подготовиться</h2>
+      <p>Общие правила — точные рекомендации дам под вашу процедуру при записи.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <h3>За 2–3 дня</h3>
+        <p>Откажитесь от скрабов, кислот и ретиноидов в домашнем уходе. Не приходите сразу после загара или солярия.</p>
+      </article>
+      <article class="card reveal">
+        <h3>В день процедуры</h3>
+        <p>Приходите с чистым лицом, без макияжа, если возможно. Плотно не ешьте за час до визита.</p>
+      </article>
+      <article class="card reveal">
+        <h3>После процедуры</h3>
+        <p>SPF 50 на улице, отказ от сауны и бассейна на несколько дней. Точные сроки зависят от процедуры.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРОТИВОПОКАЗАНИЯ ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Важно знать</p>
+      <h2>Общие противопоказания</h2>
+      <p>Это не полный список — на консультации обсуждаем вашу ситуацию индивидуально.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <h3>Острые состояния</h3>
+        <p>Температура, герпес в активной стадии, гнойничковые воспаления, свежие травмы и ожоги кожи.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Хронические заболевания</h3>
+        <p>Онкология, декомпенсированный диабет, эпилепсия, нарушения свёртываемости крови.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Беременность и ГВ</h3>
+        <p>Часть процедур и кислот ограничена. Обязательно сообщите — подберу безопасную альтернативу.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Подберём процедуру под вашу кожу</h2>
+        <p>Оставьте заявку — свяжусь, отвечу на вопросы и предложу удобное время.</p>
+      </div>
+      <a href="#contacts" class="btn btn--primary">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="page" id="about">
+<!-- ================= ЗАГОЛОВОК СТРАНИЦЫ ================= -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="page-head__inner">
+      <nav class="breadcrumbs">
+        <a href="#home">Главная</a>
+        <span class="sep">/</span>
+        <span class="current">Обо мне</span>
+      </nav>
+      <h1>Обо мне</h1>
+      <p>Косметолог-эстетист с медицинским образованием. Работаю с кожей любого типа и считаю, что честный разговор важнее красивой упаковки.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ИСТОРИЯ ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="about">
+      <div class="about__photo reveal"></div>
+
+      <div class="reveal">
+        <p class="eyebrow">Знакомство</p>
+        <h2>Хава Садулаева</h2>
+        <p>
+          В косметологию я пришла из медицины — и это во многом определило подход.
+          Я смотрю на кожу не как на поверхность для процедур, а как на орган,
+          который отражает состояние всего организма.
+        </p>
+        <p>
+          За восемь лет практики через мой кабинет прошло больше тысячи клиентов.
+          Кто-то приходит разово перед событием, кто-то — годами, раз в месяц.
+          И в обоих случаях я работаю одинаково: сначала диагностика, потом решение.
+        </p>
+        <p>
+          Я не назначаю процедуры «для профилактики» и не продаю курсы из десяти
+          позиций. Если коже достаточно базового ухода — так и скажу.
+        </p>
+
+        <ul class="about__list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Диплом врача-косметолога, ординатура по дерматовенерологии
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Сертификаты по аппаратным методикам и химическим пилингам
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Ежегодное повышение квалификации, 3–4 курса в год
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРИНЦИПЫ ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Принципы</p>
+      <h2>Как я работаю</h2>
+      <p>Четыре правила, от которых не отступаю — даже если клиент просит обратного.</p>
+    </div>
+
+    <div class="cards cards--2">
+      <article class="card reveal">
+        <div class="card__num">01</div>
+        <h3>Диагностика впереди процедуры</h3>
+        <p>Ни одна процедура не начинается без разговора о коже, образе жизни и предыдущем опыте ухода. Это экономит деньги и нервы.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">02</div>
+        <h3>Не назначаю лишнего</h3>
+        <p>Если проблема решается домашним уходом — не буду нагружать вас курсом. Профессия не про количество проданных процедур.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">03</div>
+        <h3>Честно про сроки</h3>
+        <p>Скажу заранее, когда будет виден результат: что-то видно сразу, а что-то требует двух-трёх месяцев. Без обещаний «после первого раза».</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">04</div>
+        <h3>Стерильность без компромиссов</h3>
+        <p>Одноразовые материалы, дезинфекция и стерилизация инструментов на каждом приёме. Это не маркетинг, а базовая норма.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОБРАЗОВАНИЕ ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow">Образование</p>
+      <h2>Образование и практика</h2>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline__item">
+        <div class="timeline__year">2015 — 2018</div>
+        <h3>Медицинский университет</h3>
+        <p>Лечебное дело. Диплом с отличием, специализация по дерматологии.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__year">2018 — 2019</div>
+        <h3>Ординатура по дерматовенерологии</h3>
+        <p>Углублённое изучение заболеваний кожи, диагностика и лечение акне.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__year">2019</div>
+        <h3>Профессиональная переподготовка по косметологии</h3>
+        <p>Получение квалификации врача-косметолога. Начало частной практики.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__year">2020 — 2022</div>
+        <h3>Аппаратные методики</h3>
+        <p>Курсы по капилляротерапии, фракционной терапии и жидкому лазеру. Работа в клинике эстетической медицины.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__year">2023 — сейчас</div>
+        <h3>Собственный кабинет</h3>
+        <p>Частная практика, специализация на комплексном уходе и работе с акне.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= СЕРТИФИКАТЫ ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Документы</p>
+      <h2>Сертификаты и дипломы</h2>
+      <p>Оригиналы документов можно посмотреть в кабинете — приносить с собой ничего не нужно.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1 7L12 18l4.5 2.5-1-7"/>
+          </svg>
+        </div>
+        <h3>Диплом врача</h3>
+        <p>Лечебное дело, медицинский университет, 2018 год.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1 7L12 18l4.5 2.5-1-7"/>
+          </svg>
+        </div>
+        <h3>Ординатура</h3>
+        <p>Дерматовенерология, 2019 год.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1 7L12 18l4.5 2.5-1-7"/>
+          </svg>
+        </div>
+        <h3>Аппаратная косметология</h3>
+        <p>Фракционная терапия, капилляротерапия, жидкий лазер. 2021 год.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Давайте познакомимся</h2>
+        <p>Первая встреча — это консультация: разберём кожу и решим, нужны ли процедуры вообще.</p>
+      </div>
+      <a href="#contacts" class="btn btn--primary">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+<!-- ===== PRICES ===== -->
+<section class="page" id="prices">
+<!-- ================= ЗАГОЛОВОК СТРАНИЦЫ ================= -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="page-head__inner">
+      <nav class="breadcrumbs">
+        <a href="#home">Главная</a>
+        <span class="sep">/</span>
+        <span class="current">Цены</span>
+      </nav>
+      <h1>Цены</h1>
+      <p>Стоимость зависит от состояния кожи и подобранной схемы. Точную сумму называю после диагностики — на консультации.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПРАЙС ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="price-list reveal">
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Консультация и диагностика кожи</span>
+          <span class="price-row__note">Диагностика кожи, разбор вашего ухода и план процедур</span>
+        </div>
+        <div class="price-row__val price-row__val--free">Бесплатно</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Механическая чистка</span>
+          <span class="price-row__note">Ручная чистка с распариванием и уходовой маской</span>
+        </div>
+        <div class="price-row__val">3 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Ультразвуковая чистка</span>
+          <span class="price-row__note">Без механического давления, для чувствительной кожи</span>
+        </div>
+        <div class="price-row__val">2 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Капилляротерапия</span>
+          <span class="price-row__note">Работа с сосудистой сеточкой и микроциркуляцией</span>
+        </div>
+        <div class="price-row__val">4 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Фракционная терапия</span>
+          <span class="price-row__note">Обновление кожи, работа с текстурой и тоном</span>
+        </div>
+        <div class="price-row__val">2 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Фракционная мезотерапия</span>
+          <span class="price-row__note">Введение коктейлей фракционным методом</span>
+        </div>
+        <div class="price-row__val">4 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Процедура «Сияние»</span>
+          <span class="price-row__note">Экспресс-уход на выход, эффект свежести</span>
+        </div>
+        <div class="price-row__val">3 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Розовый пилинг</span>
+          <span class="price-row__note">Мягкое осветление и ровный тон</span>
+        </div>
+        <div class="price-row__val">3 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Фарфоровая кукла</span>
+          <span class="price-row__note">Моделирующая маска, сужение пор, плотность кожи</span>
+        </div>
+        <div class="price-row__val">2 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Пилинг Джесснера</span>
+          <span class="price-row__note">Комбинированный пилинг, работа с постакне</span>
+        </div>
+        <div class="price-row__val">3 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Жидкий лазер</span>
+          <span class="price-row__note">Аппаратное обновление кожи</span>
+        </div>
+        <div class="price-row__val">5 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Пилинг «Биорепил»</span>
+          <span class="price-row__note">Пилинг без выраженного шелушения</span>
+        </div>
+        <div class="price-row__val">4 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Пилинг PRX</span>
+          <span class="price-row__note">Освежающий пилинг без шелушения</span>
+        </div>
+        <div class="price-row__val">4 000 ₽</div>
+      </div>
+    </div>
+
+    <!-- ---------- ВОСК ---------- -->
+    <div class="section__head section__head--center reveal" style="margin-top:88px">
+      <p class="eyebrow">Депиляция</p>
+      <h2>Воск</h2>
+      <p>Фиксированные цены по зонам — итоговая сумма зависит от количества зон за один визит.</p>
+    </div>
+
+    <div class="price-list reveal">
+      <div class="price-row">
+        <div><span class="price-row__name">Руки полностью</span></div>
+        <div class="price-row__val">2 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Руки до локтя</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Ноги полностью</span></div>
+        <div class="price-row__val">2 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Ноги до колен</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Бикини</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Глубокое бикини</span></div>
+        <div class="price-row__val">2 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Подмышки</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Лицо полностью</span></div>
+        <div class="price-row__val">1 000 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Живот</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Спина</span></div>
+        <div class="price-row__val">1 500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Бакенбарды</span></div>
+        <div class="price-row__val">500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div><span class="price-row__name">Усики</span></div>
+        <div class="price-row__val">500 ₽</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="price-row__name">Всё тело без ограничения</span>
+          <span class="price-row__note">Любые зоны за один визит</span>
+        </div>
+        <div class="price-row__val">5 000 ₽</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЧТО ВХОДИТ ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Без скрытых доплат</p>
+      <h2>Что входит в стоимость</h2>
+      <p>Цена в прайсе — это итоговая сумма за процедуру, а не стартовая.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Материалы</h3>
+        <p>Косметика, маски, сыворотки и одноразовые расходники включены в цену процедуры.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <h3>Время</h3>
+        <p>Длительность в прайсе — это время процедуры, а не окно записи. Никто вас не подгоняет.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Рекомендации</h3>
+        <p>План домашнего ухода и разбор вашей косметики — бесплатно, входит в любую процедуру.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КУРСЫ ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Выгодно</p>
+      <h2>Курсы и абонементы</h2>
+      <p>Курс — это всегда эффективнее разовых процедур. Скидка действует на весь курс целиком.</p>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__num">5 процедур</div>
+        <h3>Скидка 10%</h3>
+        <p>Подходит для курса чисток или пилингов. Срок действия — 3 месяца с первой процедуры.</p>
+        <div class="card__foot">
+          <span>Экономия до 2 500 ₽</span>
+          <a href="#contacts" class="link-more">Записаться →</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">10 процедур</div>
+        <h3>Скидка 15%</h3>
+        <p>Оптимально для курса пилингов или аппаратных методик. Срок действия — 6 месяцев.</p>
+        <div class="card__foot">
+          <span>Экономия до 7 500 ₽</span>
+          <a href="#contacts" class="link-more">Записаться →</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__num">Год</div>
+        <h3>Годовая карта</h3>
+        <p>12 процедур на выбор со скидкой 20%, приоритетная запись и напоминания о плановых визитах.</p>
+        <div class="card__foot">
+          <span>Экономия до 12 000 ₽</span>
+          <a href="#contacts" class="link-more">Обсудить →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Вопросы</p>
+      <h2>Оплата и запись</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>Как можно оплатить?</summary>
+        <p>Наличными, картой или переводом по СБП. Чек выдаю на месте. По предоплате за курс — договор и чек сразу.</p>
+      </details>
+
+      <details>
+        <summary>Что если я не смогу прийти?</summary>
+        <p>Предупредите, пожалуйста, минимум за 12 часов. Тогда мы просто перенесём запись. При более позднем отказе без причины может взиматься половина стоимости процедуры — время уже зарезервировано за вами.</p>
+      </details>
+
+      <details>
+        <summary>Можно ли вернуть деньги за курс?</summary>
+        <p>Да. Курс можно прервать в любой момент — я пересчитаю пройденные процедуры по обычному прайсу и верну разницу.</p>
+      </details>
+
+      <details>
+        <summary>Нужна ли предоплата?</summary>
+        <p>На разовую процедуру — нет. Для аппаратных методик и планирования курса провожу предоплату 1 000 ₽, она входит в стоимость.</p>
+      </details>
+
+      <details>
+        <summary>Консультация правда бесплатная?</summary>
+        <p>Да. Диагностика кожи, разбор вашего домашнего ухода и план процедур — бесплатно. Это часть работы, а не отдельная услуга: мне важно понять вашу кожу до того, как что-то предлагать.</p>
+      </details>
+
+      <details>
+        <summary>Цены могут измениться?</summary>
+        <p>Цены на этой странице актуальны. Если записываетесь сейчас, процедура проводится по текущей цене, даже если позже прайс обновится.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Посчитаем стоимость для вас</h2>
+        <p>На консультации подберём схему и назовём точную сумму — без сюрпризов в конце.</p>
+      </div>
+      <a href="#contacts" class="btn btn--primary">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="page" id="reviews">
+<!-- ================= ЗАГОЛОВОК СТРАНИЦЫ ================= -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="page-head__inner">
+      <nav class="breadcrumbs">
+        <a href="#home">Главная</a>
+        <span class="sep">/</span>
+        <span class="current">Отзывы</span>
+      </nav>
+      <h1>Отзывы</h1>
+      <p>Собрала здесь то, что клиенты писали сами — без правок и сокращений. Орфография сохранена.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= РЕЙТИНГ ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="rating reveal">
+      <div class="rating__score">4.9</div>
+      <div class="rating__meta">
+        <b>★★★★★</b>
+        <span>Средняя оценка по 87 отзывам за последний год</span>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:-24px">
+      Отзывы публикуются с согласия клиентов. Имена сокращены по их просьбе.
+    </p>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ ================= -->
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="cards cards--3">
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Ходила на чистку впервые за много лет. Хава всё объяснила, было совсем не больно, а кожа после — как в рекламе. Через месяц вернулась на курс.</p>
+        <div class="review__author">
+          <span class="review__avatar">М</span>
+          <span><b>Мария</b><span>механическая чистка</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Наконец-то нашла специалиста, который не выписывает десять баночек «обязательно купить». Сказала, что реально нужно — кожа стала заметно спокойнее.</p>
+        <div class="review__author">
+          <span class="review__avatar">Е</span>
+          <span><b>Екатерина</b><span>консультация</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Прошла курс PRX перед свадьбой. Кожа стала ровнее, тон выровнялся, макияж лёг идеально. Отдельное спасибо за спокойную атмосферу.</p>
+        <div class="review__author">
+          <span class="review__avatar">О</span>
+          <span><b>Ольга</b><span>пилинг PRX</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Боролась с постакне годами. Хава сразу сказала честно: быстро не будет, нужно полгода. Прошло пять месяцев — результат есть, и он держится. Спасибо за честность больше, чем за процедуры.</p>
+        <div class="review__author">
+          <span class="review__avatar">Д</span>
+          <span><b>Дарья</b><span>пилинг Джесснера</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Аппаратные процедуры делала впервые, боялась. Хава подробно объяснила, как всё работает, и что почувствую. В итоге — расслабилась и уснула прямо на кушетке.</p>
+        <div class="review__author">
+          <span class="review__avatar">И</span>
+          <span><b>Ирина</b><span>жидкий лазер</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Ценю, что можно задать любой вопрос и получить нормальный ответ, а не «это сложно объяснить». Домашний уход подобрали под мой бюджет, без премиум-косметики.</p>
+        <div class="review__author">
+          <span class="review__avatar">Н</span>
+          <span><b>Наталья</b><span>фарфоровая кукла</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Кабинет чистый, всё вскрывается при тебе, инструменты стерильные. Для меня это было главным сомнением, когда искала косметолога.</p>
+        <div class="review__author">
+          <span class="review__avatar">С</span>
+          <span><b>Светлана</b><span>ультразвуковая чистка</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Сосудистая сеточка на щеках раньше бросалась в глаза. Прошла курс — стало заметно спокойнее, лицо больше не краснеет на улице. Хожу поддерживающе и не собираюсь бросать.</p>
+        <div class="review__author">
+          <span class="review__avatar">А</span>
+          <span><b>Алина</b><span>капилляротерапия</span></span>
+        </div>
+      </article>
+
+      <article class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p>Пришла с реакцией на новый крем — лицо горело. Хава не стала сразу что-то делать, а сначала успокоила кожу и только потом мы вернулись к плану. Профессионализм.</p>
+        <div class="review__author">
+          <span class="review__avatar">Ю</span>
+          <span><b>Юлия</b><span>пилинг «Биорепил»</span></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Хотите такой же результат?</h2>
+        <p>Начните с консультации — разберём вашу кожу и составим реальный план.</p>
+      </div>
+      <a href="#contacts" class="btn btn--primary">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="page" id="contacts">
+<!-- ================= ЗАГОЛОВОК СТРАНИЦЫ ================= -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="page-head__inner">
+      <nav class="breadcrumbs">
+        <a href="#home">Главная</a>
+        <span class="sep">/</span>
+        <span class="current">Контакты</span>
+      </nav>
+      <h1>Контакты и запись</h1>
+      <p>Позвоните, напишите в WhatsApp или оставьте заявку — отвечаю в течение дня и подбираю удобное время.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КОНТАКТЫ + ФОРМА ================= -->
+<section class="section" id="booking">
+  <div class="wrap">
+    <div class="contact">
+      <div class="reveal">
+        <p class="eyebrow">Связаться</p>
+        <h2>Как со мной<br>связаться</h2>
+        <p>Если сомневаетесь, какая процедура нужна — просто напишите. Подскажу без записи.</p>
+
+        <ul class="contact__items">
+          <li>
+            <span class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            </span>
+            <span><b><a href="tel:+79289523202">+7 928 952-32-02</a></b><small>Звонок или WhatsApp</small></span>
+          </li>
+          <li>
+            <span class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span><b>ТД «ГУМС», ул. Ватутина, 96</b><small>Помещение 11, 1 этаж</small></span>
+          </li>
+          <li>
+            <span class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <span><b>Пн–Сб, 10:00–20:00</b><small>Воскресенье — по договорённости</small></span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form reveal" id="bookingForm" data-whatsapp="79289523202">
+        <h3>Заявка на приём</h3>
+        <p>Заполните поля и отправьте — заявка придёт мне в WhatsApp, отвечу в течение дня.</p>
+
+        <div class="field">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+        </div>
+
+        <div class="field">
+          <label for="service">Процедура</label>
+          <select id="service" name="service">
+            <option>Консультация</option>
+            <option>Механическая чистка</option>
+            <option>Ультразвуковая чистка</option>
+            <option>Капилляротерапия</option>
+            <option>Фракционная терапия</option>
+            <option>Фракционная мезотерапия</option>
+            <option>Процедура «Сияние»</option>
+            <option>Розовый пилинг</option>
+            <option>Фарфоровая кукла</option>
+            <option>Пилинг Джесснера</option>
+            <option>Жидкий лазер</option>
+            <option>Пилинг «Биорепил»</option>
+            <option>Пилинг PRX</option>
+            <option>Депиляция воском</option>
+            <option>Пока не знаю — нужна помощь</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" placeholder="Удобные дни и время, особенности кожи"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 2.6.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1Z"/>
+          </svg>
+          Отправить в WhatsApp
+        </button>
+        <p class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        <p class="form__ok" id="formOk">Почти готово! Открываю WhatsApp — нажмите «Отправить» в чате, и заявка придёт мне.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КАК ДОБРАТЬСЯ ================= -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal">
+      <p class="eyebrow">Кабинет</p>
+      <h2>Как добраться</h2>
+      <p>Приём проходит в торговом доме «ГУМС»: 1 этаж, помещение 11.</p>
+    </div>
+
+    <div class="map reveal">
+      <div>
+        <div class="map__pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <b>ТД «ГУМС», ул. Ватутина, 96</b>
+        <span>Помещение 11, 1 этаж — здесь будет карта</span>
+      </div>
+    </div>
+
+    <div class="cards cards--3 reveal" style="margin-top:32px">
+      <article class="card">
+        <h3>Адрес</h3>
+        <p>Торговый дом «ГУМС», ул. Ватутина, 96, помещение 11, 1 этаж.</p>
+      </article>
+      <article class="card">
+        <h3>Как найти</h3>
+        <p>Не получается найти кабинет — позвоните, подскажу дорогу: <a href="tel:+79289523202">+7 928 952-32-02</a></p>
+      </article>
+      <article class="card">
+        <h3>Приём</h3>
+        <p>Пн–Сб, 10:00–20:00. Приходите за 5 минут до назначенного времени.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+</section>
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <a #home class="logo">
+        <span class="logo__mark">Х</span>
+        <span class="logo__text">
+          <span class="logo__name">Хава Садулаева</span>
+          <span class="logo__role">Косметолог-эстетист</span>
+        </span>
+      </a>
+      <nav class="footer__links">
+        <a #services>Услуги</a>
+        <a #about>Обо мне</a>
+        <a #prices>Цены</a>
+        <a #reviews>Отзывы</a>
+        <a #contacts>Контакты</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Хава Садулаева. Косметология и уход за кожей.</span>
+      <span class="footer__phone"><a href="tel:+79289523202">+7 928 952-32-02</a></span>
+      <span>Информация на сайте не является медицинской консультацией.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   Общий скрипт для всех страниц
+   ============================================================ */
+
+/* --- мобильное меню --- */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function toggleMenu(force){
+  if (!burger || !mobileMenu) return;
+  const open = force !== undefined ? force : !mobileMenu.classList.contains('open');
+  mobileMenu.classList.toggle('open', open);
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+}
+
+if (burger && mobileMenu){
+  burger.addEventListener('click', () => toggleMenu());
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+}
+
+/* --- тень у шапки при скролле --- */
+const header = document.getElementById('header');
+if (header){
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+}
+
+/* --- появление блоков при скролле --- */
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px'});
+  revealEls.forEach(el => observer.observe(el));
+}
+
+/* --- форма записи: собираем заявку и открываем WhatsApp ---
+   Номер берётся из data-whatsapp на самой форме (contacts.html).
+   Указывать только цифры, без + и пробелов.
+*/
+const form = document.getElementById('bookingForm');
+if (form){
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const number = (form.dataset.whatsapp || '').replace(/\D/g, '');
+    const val = (id) => {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    };
+
+    const lines = [
+      'Заявка с сайта',
+      '',
+      'Имя: ' + val('name'),
+      'Телефон: ' + val('phone'),
+      'Процедура: ' + val('service'),
+    ];
+    const comment = val('comment');
+    if (comment) lines.push('Комментарий: ' + comment);
+
+    const ok = document.getElementById('formOk');
+    if (ok) ok.classList.add('show');
+
+    if (!number) return; // номер не задан — просто показываем подтверждение
+
+    const url = 'https://wa.me/' + number + '?text=' + encodeURIComponent(lines.join('\n'));
+    const win = window.open(url, '_blank');
+    if (win) {
+      win.opener = null;
+    } else {
+      window.location.href = url; // если всплывающее окно заблокировано
+    }
+  });
+}
+
+
+/* ---------- переключение страниц ---------- */
+const PAGE_IDS = ['home','services','about','prices','reviews','contacts'];
+
+function showPage(id, anchor){
+  if (!PAGE_IDS.includes(id)) id = 'home';
+
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === id));
+  document.querySelectorAll('[data-nav]').forEach(a =>
+    a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+
+  if (typeof toggleMenu === 'function') toggleMenu(false);
+
+  const page = document.getElementById(id);
+  if (page) page.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+  if (anchor) {
+    const target = document.getElementById(anchor);
+    if (target) { setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 60); return; }
+  }
+  window.scrollTo(0, 0);
+}
+
+function route(){
+  const raw = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (!raw) { showPage('home'); return; }
+  if (PAGE_IDS.includes(raw)) { showPage(raw); return; }
+  const el = document.getElementById(raw);
+  const owner = el ? el.closest('.page') : null;
+  showPage(owner ? owner.id : 'home', raw);
+}
+
+window.addEventListener('hashchange', route);
+route();
+</script>
+
+</body>
+</html>
